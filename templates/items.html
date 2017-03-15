@@ -1,0 +1,20 @@
+<select ng-model="categoria">
+  <option value="0" selected="selected">Todas</option>
+  <option value="1">Foto Rojo</option>
+  <option value="2">Radar</option>
+  <option value="3">Gasolinera</option>
+</select>
+<select ng-model="distancia">
+  <option value="1">5km</option>
+  <option value="2">15km</option>
+  <option value="3">20km</option>
+</select>
+<button ng-click="items_buscar()">Buscar</button>
+<div ng-if="items">
+  <ul>
+  	<li ng-repeat="item in items">
+  		<a href="#/item/{{item.id}}">{{item.categoria}}</a> - {{item.direccion}}
+  	</li>
+  </ul>
+</div>
+<div ng-if="!items">No se encontraron items</div>
